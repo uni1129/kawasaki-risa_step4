@@ -1,10 +1,19 @@
-version: '3.8'
+FROM php : 8.2 - apache
 
-services:
-  web:
-    image: php:8.2-apache
-    container_name: php_form_app
-    ports:
-      - "8080:80"
-    volumes:
-      - .:/var/www/html
+#html : //localhost : 8080/
+COPY src/var/www/html/
+
+#http : //locaslhost : 8080 / practice-php
+COPY src/practice . php/var/www/html/
+
+
+# version: '3.8'
+
+# services:
+#   web:
+#     image: php:8.2-apache
+#     container_name: php_form_app
+#     ports:
+#       - "8080:80"
+#     volumes:
+#       - .:/var/www/html
