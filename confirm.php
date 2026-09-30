@@ -24,7 +24,7 @@
     echo "<p>年齢は0から150の間で入力して下さい。</p>";
     } elseif(!preg_match("/^[0-9\-]+$/",$phone)){
     echo "<p>電話番号は半角数字とハイフンのみで入力してください。</p>";
-    }elseif (filter_var($email, FILTER_VALIDATE_EMAIL)){
+    }elseif (!preg_match("/^(?=.*[a-zA-Z])(?=.*@)(?=.*\.)[a-zA-Z@.]+$/",$email)){
     echo"<p>メールアドレスの形式が正しくありません。</p>";
     }elseif(!preg_match("/^[a-zA-Z0-9\-\x{3040}-\x{309F}\x{30A0}-\x{30FF}\x{4E00}-\x{9FFF}]+$/u",$address)){
     echo"<p>住所はひらがな、カタカナ、漢字、英字、半角数字、ハイフンのみ使用できます。</p>";
